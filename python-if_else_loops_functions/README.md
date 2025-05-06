@@ -57,10 +57,8 @@ At the end of this project, you should be able to:
 | `10-add.py`              | Add two integers                            |
 | `11-pow.py`              | Return the power of a number                |
 | `12-fizzbuzz.py`         | Implement the FizzBuzz logic                |
-| `13-insert_number.c`     | Insert node into sorted linked list (C code)|
 | `100-print_tebahpla.py`  | Print alphabet in reverse, alternating case |
 | `101-remove_char_at.py`  | Remove character at specific index          |
-| `102-magic_calculation.py`| Python bytecode translated to source code  |
 
 ---
 
