@@ -19,5 +19,8 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
     func = operators[operator]
+    if operator == '/' and b == 0:
+        print("Error : Divivsion by zero")
+        sys.exit(1)
     result = func(a, b)
     print(f"{a} {operator} {b} = {result}")
