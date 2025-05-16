@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """
 Module 4-print_square
-Defines a function `print_square(size)` that prints a square using the `#` character.
+Defines a function `print_square(size)` that prints a square
+using the `#` character.
 
-The function takes an integer `size` as its parameter. If `size` is not an integer
+The function takes an integer `size` as its parameter. If `size
+is not an integer
 or if it is less than 0, appropriate exceptions will be raised.
 
 Example:
@@ -12,6 +14,8 @@ Example:
     ###
     ###
 """
+
+
 def print_square(size):
     """
     Prints a square with the character '#'.
