@@ -4,9 +4,9 @@ It includes add_integer to add two numbers as integers.
 Inputs are validated and exceptions are raised if invalid.
 This helps ensure reliable and safe operations.
 Documentation meets the project requirements."""
-
-
 import math
+
+
 def add_integer(a, b=98):
     """
     Adds two integers or floats and returns their sum as an integer.
@@ -25,7 +25,8 @@ def add_integer(a, b=98):
 
     # Vérification des valeurs spéciales : NaN, inf, -inf
     if math.isnan(a) or math.isnan(b):
-        raise TypeError("a must be a number" if math.isnan(a) else "b must be a number")
+        raise TypeError(
+            "a must be a number" if math.isnan(a) else "b must be a number")
     if a in [float('inf'), float('-inf')]:
         raise TypeError("a must be a number")
     if b in [float('inf'), float('-inf')]:
