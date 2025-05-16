@@ -6,6 +6,7 @@ This helps ensure reliable and safe operations.
 Documentation meets the project requirements."""
 
 
+import math
 def add_integer(a, b=98):
     """
     Adds two integers or floats and returns their sum as an integer.
@@ -17,12 +18,17 @@ def add_integer(a, b=98):
     Returns:
         int: The sum of a and b as an integer.
     """
-    if not isinstance(a, int) and not isinstance(a, float):
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if not isinstance(b, int) and not isinstance(b, float):
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    if isinstance(a, float):
-        a = int(a)
-    if isinstance(b, float):
-        b = int(b)
-    return (a + b)
+
+    # Vérification des valeurs spéciales : NaN, inf, -inf
+    if math.isnan(a) or math.isnan(b):
+        raise TypeError("a must be a number" if math.isnan(a) else "b must be a number")
+    if a in [float('inf'), float('-inf')]:
+        raise TypeError("a must be a number")
+    if b in [float('inf'), float('-inf')]:
+        raise TypeError("b must be a number")
+
+    return int(a) + int(b)
