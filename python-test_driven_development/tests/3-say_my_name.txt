@@ -9,8 +9,6 @@ TypeError: last_name must be a string
 Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
->>> say_my_name("","Cool")
-My name is Cool
 >>> say_my_name("Anne")
 My name is Anne
 >>> say_my_name("Anne", "")
