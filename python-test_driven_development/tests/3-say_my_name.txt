@@ -15,3 +15,7 @@ My name is Cool
 My name is Anne
 >>> say_my_name("Anne", "")
 My name is Anne
+>>> say_my_name()
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
