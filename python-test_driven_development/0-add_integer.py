@@ -8,14 +8,7 @@ Documentation meets the project requirements."""
 
 def add_integer(a, b=98):
     """
-    Adds two integers or floats and returns their sum as an integer.
-    Args:
-        a (int or float): The first number.
-        b (int or float): The second number, default is 98.
-    Raises:
-        TypeError: If a or b is not an integer or a float.
-    Returns:
-        int: The sum of a and b as an integer.
+    Args:a (int or float)b (int or float): The second number, default is 98.
     """
     if not isinstance(a, int) and not isinstance(a, float):
         raise TypeError("a must be an integer")
