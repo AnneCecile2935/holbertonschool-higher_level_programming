@@ -83,29 +83,29 @@ class Square:
 
     def __ne__(self, other):
         """Check if two squares are not equal in area."""
-        return self.area() != other.area()
+            return self.area() != other.area()
         return Notimplemented
-    
+
     def __lt__(self, other):
         """Check if this square is smaller than another in area."""
-        return self.area() < other.area()
+            return self.area() < other.area()
         return Notimplemented
 
     def __le__(self, other):
         """Check if this square is smaller than or equal to another
         in area.
         """
-        return self.area() <= other.area()
+            return self.area() <= other.area()
         return Notimplemented
 
     def __gt__(self, other):
         """Check if this square is greater than another in area."""
-        return self.area() > other.area()
+            return self.area() > other.area()
         return Notimplemented
 
     def __ge__(self, other):
         """Check if this square is greater than or equal to another
         in area.
         """
-        return self.area() >= other.area()
+            return self.area() >= other.area()
         return Notimplemented
