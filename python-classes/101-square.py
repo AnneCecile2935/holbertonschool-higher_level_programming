@@ -140,4 +140,4 @@ class Square:
         result = "\n" * self.position[1]
         for _ in range(self.size):
             result += " " * self.position[0] + "#" * self.size + "\n"
-        return result.strip()  # Remove the last newline
+        return result.rstrip()
