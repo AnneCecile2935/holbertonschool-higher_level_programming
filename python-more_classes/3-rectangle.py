@@ -113,6 +113,16 @@ class Rectangle:
         self.__height = value
 
     def __str__(self):
+        """
+        Returns a string representation of the rectangle using the
+        '#' character.
+
+        If either the width or the height is 0, returns an empty string.
+
+        Returns:
+        str: A string made of lines of '#' characters representing
+        the rectangle.
+        """
         if self.__width == 0 or self.__height == 0:
             return ""
         rect = []
@@ -120,8 +130,8 @@ class Rectangle:
             [rect.append('#') for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
-        return("".join(rect))
-        
+        return ("".join(rect))
+
     def area(self):
         """
         Calculates the area of the rectangle.
@@ -141,7 +151,3 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width + self.__height) * 2
-
-
-
-
