@@ -64,7 +64,7 @@ By the end of this project, you should be able to explain (without Google):
 | 9      | Find max integer 🔝               | Find biggest integer in a list, return None if empty.                                                    | Mandatory  | 100% (12/12 pts) | python-data_structures | 9-max_integer.py         |
 | 10     | Multiples of 2 ✔️                 | Return list of booleans indicating if elements are divisible by 2.                                      | Mandatory  | 100% (9/9 pts)   | python-data_structures | 10-divisible_by_2.py     |
 | 11     | Delete at index ❌                | Delete item at specific index in list, do nothing if index invalid, no pop().                            | Mandatory  | 100% (11/11 pts) | python-data_structures | 11-delete_at.py          |
-| 12     | Switch values 🔀                  | Switch the values of two variables in exactly 5 lines of code.                                           | Mandatory  | 100% (11/11 pts)  python-data_structures | 12-switch.py             |
+| 12     | Switch values 🔀                  | Switch the values of two variables in exactly 5 lines of code.                                           | Mandatory  | -                | python-data_structures | 12-switch.py             |
 
 ---
 
