@@ -1,7 +1,5 @@
 # Python - Test-Driven Development
 
-![badge](https://img.shields.io/badge/Project%20Completion-96.41%25-brightgreen)
-
 ## 📚 Description
 
 This project focuses on the **Test-Driven Development (TDD)** approach in Python. The goal is to write unit and interactive tests before implementing functionality, reinforcing strong coding practices like documentation, input validation, and edge case handling.
