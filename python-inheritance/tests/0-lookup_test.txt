@@ -1,0 +1,3 @@
+>>> lookup = __import__('0-lookup').lookup
+>>> lookup("hello")[:5]
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__']
