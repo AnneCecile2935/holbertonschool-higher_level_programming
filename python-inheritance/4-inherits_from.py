@@ -15,22 +15,26 @@ def inherits_from(obj, a_class):
 
     Args:
         obj (object): L'objet à tester.
-        a_class (type): La classe à comparer.
+        a_class (type): La classe à verifier comme ancêtre
 
     Returns:
-        bool: True si obj est une instance de a_class héritée directement
-        de a_class,
+        bool: True si obj est une instance d'une sous classe de a_class
               False sinon.
 
     Exemple:
-        >>> class A: pass
-        >>> class B(A): pass
-        >>> b = B()
-        >>> is_kind_of_class(b, A)
+        >>> class A:
+        ...     pass
+        >>> class B(A):
+        ...     pass
+        >>> class C(B):
+        ...     pass
+        >>> inherits_from(B(), A)
         True
-        >>> is_kind_of_class(b, B)
+        >>> inherits_from(C(), A)
         True
-        >>> is_kind_of_class(b, list)
+        >>> inherits_from(A(), A)
+        False
+        >>> inherits_from(5, int)
         False
     """
     cls = obj.__class__
