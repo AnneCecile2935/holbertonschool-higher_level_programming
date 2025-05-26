@@ -27,4 +27,4 @@ def lookup(obj):
         >>> lookup("hello")
         ['__add__', '__class__', ..., 'upper', 'zfill']
     """
-    return dir(list)
+    return dir(obj)
