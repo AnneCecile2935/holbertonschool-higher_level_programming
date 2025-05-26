@@ -1,18 +1,35 @@
->>> interger_validator = __import__('7-base_geometry').integer_validator
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> result = integer_validator("create", 5)
-[1, 1, 3, 4, 5]
+>>> bg = BaseGeometry()  # TEST 1
 
-
->>> my_list
-[3, 1, 4, 1, 5]
-
->>> my_list_empty = MyList()
->>> my_list_empty.print_sorted()
-[]
-
-
->>> MyList([1, 'deux', 3])
+>>> bg.area()  # TEST 2
 Traceback (most recent call last):
 ...
-TypeError: Elements must be integers
+Exception: area() is not implemented
+
+>>> bg.integer_validator("length", 5)  # TEST 3
+
+>>> bg.integer_validator("width", 0)  # TEST 4
+Traceback (most recent call last):
+...
+ValueError: width must be greater than 0
+
+>>> bg.integer_validator("height", -10)  # TEST 5
+Traceback (most recent call last):
+...
+ValueError: height must be greater than 0
+
+>>> bg.integer_validator("depth", 3.14)  # TEST 6
+Traceback (most recent call last):
+...
+TypeError: depth must be an integer
+
+>>> bg.integer_validator("radius", "10")  # TEST 7
+Traceback (most recent call last):
+...
+TypeError: radius must be an integer
+
+>>> bg.integer_validator("side", None)  # TEST 8
+Traceback (most recent call last):
+...
+TypeError: side must be an integer
