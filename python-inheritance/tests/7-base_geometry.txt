@@ -41,6 +41,10 @@ area() is not implemented
 >>> isinstance(bg, BaseGeometry)
 True
 
+>>> bg = BaseGeometry()
+>>> isinstance(bg, BaseGeometry)
+True
+
 >>> bg.integer_validator("height", None)
 Traceback (most recent call last):
 TypeError: height must be an integer
@@ -61,3 +65,4 @@ True
 >>> import sys
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("big_value", sys.maxsize)
+
