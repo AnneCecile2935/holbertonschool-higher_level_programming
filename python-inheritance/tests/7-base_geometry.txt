@@ -57,3 +57,7 @@ TypeError: age must be an integer
 True
 
 >>> bg.integer_validator("age", True)
+
+>>> import sys
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("big_value", sys.maxsize)
