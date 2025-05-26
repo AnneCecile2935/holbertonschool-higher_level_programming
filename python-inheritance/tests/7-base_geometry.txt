@@ -55,3 +55,5 @@ TypeError: age must be an integer
 
 >>> hasattr(bg, "area") and hasattr(bg, "integer_validator")
 True
+
+>>> bg.integer_validator("age", True)
