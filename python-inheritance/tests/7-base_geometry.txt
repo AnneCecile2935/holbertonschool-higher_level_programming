@@ -65,3 +65,7 @@ True
 >>> import sys
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("big_value", sys.maxsize)
+
+>>> bg.integer_validator("x", 10)
+>>> bg.integer_validator("y", 20)
+>>> bg.integer_validator("z", 30)
