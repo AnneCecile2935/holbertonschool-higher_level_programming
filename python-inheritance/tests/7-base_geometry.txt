@@ -1,7 +1,6 @@
->>> MyList = __import__('1-my_list').MyList
+>>> interger_validator = __import__('7-base_geometry').integer_validator
 
->>> my_list = MyList([3, 1, 4, 1, 5])
->>> my_list.print_sorted()
+>>> result = integer_validator("create", 5)
 [1, 1, 3, 4, 5]
 
 
