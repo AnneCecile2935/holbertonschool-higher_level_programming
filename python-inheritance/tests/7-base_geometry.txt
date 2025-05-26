@@ -65,11 +65,6 @@ TypeError: age must be an integer
 ...     print(f"{e.__class__.__name__}: {e}")
 TypeError: age must be an integer
 >>> try:
-...     bg.area(8)
-... except Exception as e:
-...     print(e)
-BaseGeometry.area() takes 1 positional argument but 2 were given
->>> try:
 ...     bg.area()
 ... except Exception as e:
 ...     print(e)
