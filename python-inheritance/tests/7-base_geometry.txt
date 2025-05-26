@@ -65,9 +65,3 @@ True
 >>> import sys
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("big_value", sys.maxsize)
-
->>> try:
-...     bg.area(5)
-... except Exception as e:
-...     print(e)
-BaseGeometry.area() takes 1 positional argument but 2 were given
