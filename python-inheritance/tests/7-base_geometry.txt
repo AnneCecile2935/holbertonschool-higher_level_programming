@@ -6,7 +6,7 @@
 >>> bg.integer_validator("width", 89)
 
 >>> try:
-...    bg.integer_validator("name", "John")
+...    bg.integer_validator("name", "person")
 ... except Exception as e:
 ...    print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] name must be an integer
@@ -22,3 +22,9 @@
 ... except Exception as e:
 ...    print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] distance must be greater than 0
+
+>>> try:
+    ...     bg.area()
+    ... except Exception as e:
+    ...     print(e)
+    area() is not implemented
