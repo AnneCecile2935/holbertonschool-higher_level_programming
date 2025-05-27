@@ -69,4 +69,4 @@ class Square(Rectangle):
         Returns:
             str: Description lisible du carré.
         """
-        return "[Rectangle] {} / {}".format(self.__size, self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
