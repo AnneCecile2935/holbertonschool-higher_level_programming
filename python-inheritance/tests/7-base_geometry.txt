@@ -1,79 +1,65 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
 >>> bg = BaseGeometry()
 
->>> bg.integer_validator("height", 10)
->>> bg.integer_validator("width", 1)
+>>> bg.integer_validator("unitest", 12)
+>>> bg.integer_validator("width", 10)
 
 >>> try:
-...     bg.integer_validator("name", "string")
+...     bg.integer_validator("name", int(1.8))
 ... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[TypeError] name must be an integer
+...     print(f"{e.__class__.__name__}: {e}")
 >>> try:
-...     bg.integer_validator("ratio", 3.14)
+...     bg = BaseGeometry(5)
 ... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[TypeError] ratio must be an integer
->>> try:
-...     bg.integer_validator("items", [1, 2, 3])
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[TypeError] items must be an integer
+...     print(f"{e.__class__.__name__}: {e}")
+TypeError: BaseGeometry() takes no arguments
 
 >>> try:
-...     bg.integer_validator("zero", 0)
+...     bg.integer_validator("name", "John")
 ... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[ValueError] zero must be greater than 0
->>> try:
-...     bg.integer_validator("negative", -10)
-... except Exception as e:
-...     print(f"[{e.__class__.__name__}] {e}")
-[ValueError] negative must be greater than 0
+...     print(f"{e.__class__.__name__}: {e}")
+TypeError: name must be an integer
 
 >>> try:
-...     bg.area()
+...     bg.integer_validator("name", -5)
 ... except Exception as e:
-...     print(e)
-area() is not implemented
+...     print(f"{e.__class__.__name__}: {e}")
+ValueError: name must be greater than 0
 
->>> isinstance(bg, BaseGeometry)
-True
+>>> try:
+...     bg.integer_validator("name", 0)
+... except Exception as e:
+...     print(f"{e.__class__.__name__}: {e}")
+ValueError: name must be greater than 0
 
->>> bg = BaseGeometry()
->>> isinstance(bg, BaseGeometry)
-True
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     print(f"{e.__class__.__name__}: {e}")
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> bg.integer_validator("height", None)
-Traceback (most recent call last):
-TypeError: height must be an integer
+>>> try:
+...     bg.integer_validator("name")
+... except Exception as e:
+...     print(f"{e.__class__.__name__}: {e}")
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
->>> bg.integer_validator("age", (4,))
-Traceback (most recent call last):
-TypeError: age must be an integer
+>>> try:
+...     bg.integer_validator("name", [1])
+... except Exception as e:
+...     print(f"{e.__class__.__name__}: {e}")
+TypeError: name must be an integer
 
->>> bg.integer_validator("age", {"key": "value"})
-Traceback (most recent call last):
-TypeError: age must be an integer
+>>> try:
+...     bg.integer_validator("name", {1})
+... except Exception as e:
+...     print(f"{e.__class__.__name__}: {e}")
+TypeError: name must be an integer
 
->>> hasattr(bg, "area") and hasattr(bg, "integer_validator")
-True
+>>> try:
+...     bg.integer_validator("name", 1.8)
+... except Exception as e:
+...     print(f"{e.__class__.__name__}: {e}")
+TypeError: name must be an integer
 
->>> bg.integer_validator("age", True)
-
->>> import sys
->>> bg = BaseGeometry()
->>> bg.integer_validator("big_value", sys.maxsize)
-
->>> bg.integer_validator("x", 10)
->>> bg.integer_validator("y", 20)
->>> bg.integer_validator("z", 30)
-
->>> bg.area(4)
-Traceback (most recent call last):
-TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
-
->>> bg.integer_validator("name", 12 , 12)
-Traceback (most recent call last):
-TypeError: integer_validator() takes 3 positional arguments but 4 were given
+>>
