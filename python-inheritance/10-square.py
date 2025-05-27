@@ -7,15 +7,18 @@ Ce module définit la classe Square, qui hérite de Rectangle.
 
 La classe Square représente un carré, une forme géométrique particulière
 où la largeur et la hauteur sont égales. Elle hérite de la classe Rectangle
-et utilise l’héritage pour valider et stocker sa dimension unique : la taille (`size`).
+et utilise l’héritage pour valider et stocker sa dimension unique :
+la taille (`size`).
 
 Fonctionnalités :
-- Validation de la taille à l’aide de integer_validator (héritée de BaseGeometry)
+- Validation de la taille à l’aide de integer_validator
+(héritée de BaseGeometry)
 - Calcul de l’aire du carré
 - Représentation lisible via __str__
 """
 
 Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square(Rectangle):
     """
