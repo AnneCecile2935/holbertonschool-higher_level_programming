@@ -36,8 +36,13 @@ class CountedIterator:
         Returns:
             L'élément suivant de l'itérateur.
         """
-        self.counter += 1
-        return next(self.iterator)
+        try:
+            item = next(self.iterator)
+            self.counter += 1
+            return item
+
+        except StopIteration:
+            raise StopIteration
 
     def get_count(self):
         """
