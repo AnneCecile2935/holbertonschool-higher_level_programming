@@ -124,8 +124,8 @@ def shape_info(shape):
     Args:
         shape (Shape): Une instance d’une classe dérivée de Shape.
     """
-    print("Area:", shape.area())
-    print("Perimeter:", shape.perimeter())
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
 
 
 if __name__ == "__main__":
