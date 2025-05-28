@@ -114,7 +114,7 @@ class Rectangle(Shape):
         Returns:
             float: Périmètre du rectangle.
         """
-        return (self.width + self.height) * 2
+        return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
