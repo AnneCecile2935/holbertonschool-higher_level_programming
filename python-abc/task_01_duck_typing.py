@@ -119,10 +119,10 @@ class Rectangle(Shape):
 
 def shape_info(shape):
     """
-    Affiche l'aire et le périmètre d’un objet Shape.
+    Affiche l'aire et le périmètre d’un objet.
 
     Args:
-        shape (Shape): Une instance d’une classe dérivée de Shape.
+        shape: Un objet qui possède les méthodes area() et perimeter().
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
