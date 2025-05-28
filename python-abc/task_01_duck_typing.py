@@ -16,7 +16,7 @@ Fonctions:
     shape_info(shape): Affiche l’aire et le périmètre d’un objet Shape.
 """
 from abc import ABC, abstractmethod
-
+import math
 
 class Shape(ABC):
     """
@@ -65,7 +65,7 @@ class Circle(Shape):
         Returns:
             float: Aire du cercle.
         """
-        return 3.14 * self.radius ** 2
+        return math.pi * self.radius ** 2
 
     def perimeter(self):
         """
@@ -74,7 +74,7 @@ class Circle(Shape):
         Returns:
             float: Périmètre du cercle.
         """
-        return 2 * 3.14 * self.radius
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
