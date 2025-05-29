@@ -1,50 +1,70 @@
 #!/usr/bin/python3
+"""
+Module myint
+
+Ce module contient la définition de la classe MyInt, une sous-classe
+personnalisée de int qui inverse le comportement des opérateurs d'égalité
+(==) et d'inégalité (!=).
+
+Fonctionnalités :
+- L'opérateur == retourne True lorsque les valeurs sont différentes.
+- L'opérateur != retourne True lorsque les valeurs sont égales.
+"""
+
+
 class MyInt(int):
     """
-    Classe MyInt qui hérite de int avec les opérateurs == et != inversés.
+    Sous-classe de int avec opérateurs == et != inversés.
 
-    Description:
-    ------------
-    MyInt est une sous-classe de int où :
-    - l'opérateur d'égalité (==) utilise la logique inverse de int.__eq__,
-      c'est-à-dire qu'il retourne True si les valeurs sont différentes.
-    - l'opérateur d'inégalité (!=) utilise la logique inverse de int.__ne__,
-      c'est-à-dire qu'il retourne True si les valeurs sont égales.
+    Cette classe modifie le comportement des comparaisons d'égalité et
+    d'inégalité pour que :
 
-    Cela signifie que les comparaisons == et != sont inversées par rapport
-    au comportement standard des entiers en Python.
+      - a == b retourne True si a et b sont différents,
+      - a != b retourne True si a et b sont égaux.
 
-    Méthodes redéfinies:
-    --------------------
+    Cela permet d'utiliser MyInt comme un entier "rebelle".
+
+    Méthodes
+    --------
     __ne__(self, other)
-        Utilise la méthode __eq__ de la classe parent (int) pour inverser
-        le résultat de l'inégalité.
+        Retourne True si self est égal à other (inverse de !=).
 
     __eq__(self, other)
-        Utilise la méthode __ne__ de la classe parent (int) pour inverser
-        le résultat de l'égalité.
-
-    Exemple d'utilisation:
-    ----------------------
-    >>> a = MyInt(5)
-    >>> b = MyInt(5)
-    >>> c = MyInt(3)
-
-    >>> a == b
-    False  # Valeurs égales, mais == est inversé
-
-    >>> a != b
-    True   # Valeurs égales, mais != est inversé
-
-    >>> a == c
-    True   # Valeurs différentes, == retourne True (inversé)
-
-    >>> a != c
-    False  # Valeurs différentes, != retourne False (inversé)
+        Retourne True si self est différent de other (inverse de ==).
     """
 
     def __ne__(self, other):
+        """
+        Redéfinit l'opérateur d'inégalité (!=).
+
+        Inverse la logique de la classe parente int.__ne__ en appelant
+        int.__eq__ pour déterminer l'égalité.
+
+        Paramètres:
+        -----------
+        other : objet à comparer
+
+        Retour:
+        -------
+        bool
+            True si self est égal à other, False sinon.
+        """
         return super().__eq__(other)
 
     def __eq__(self, other):
+        """
+        Redéfinit l'opérateur d'égalité (==).
+
+        Inverse la logique de la classe parente int.__eq__ en appelant
+        int.__ne__ pour déterminer l'inégalité.
+
+        Paramètres:
+        -----------
+        other : objet à comparer
+
+        Retour:
+        -------
+        bool
+            True si self est différent de other, False sinon.
+        """
         return super().__ne__(other)
