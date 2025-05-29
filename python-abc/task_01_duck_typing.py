@@ -57,9 +57,7 @@ class Circle(Shape):
         Args:
             radius (float): Rayon du cercle.
         """
-        if radius < 0:
-            raise ValueError("radius muste be positive")
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """
