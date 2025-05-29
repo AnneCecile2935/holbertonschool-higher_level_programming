@@ -56,16 +56,16 @@ class FlyingFish(Fish, Bird):
     """
     def fly(self):
         """Affiche que le poisson volant plane."""
-        print("The flying fish is soaring")
+        print("The flying fish is soaring !")
 
     def swim(self):
         """Affiche que le poisson volant nage."""
-        print("The flying fish is swimming")
+        print("The flying fish is swimming !")
 
     def habitat(self):
         """Affiche que le poisson volant vit à la fois dans l'eau
         et dans le ciel."""
-        print("The flying fish lives both in water and the sky")
+        print("The flying fish lives both in water and the sky !")
 
 
 if __name__ == "__main__":
