@@ -18,5 +18,5 @@ def read_file(filename=""):
         PermissionError: If the file cannot be accessed due
         to permission issues.
     """
-    with open("my_file_0.txt", "rt") as f:
-        print(f.read())
+    with open("my_file_0.txt", "r", encoding='utf-8') as f:
+        print(f.read(), end="")
