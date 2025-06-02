@@ -1,4 +1,15 @@
 #!/usr/bin/python3
+"""
+Module Student
+
+Ce module contient la définition de la classe Student qui modélise un étudiant
+avec les attributs first_name, last_name et age, ainsi qu'une méthode pour
+obtenir une représentation JSON de l'objet.
+
+Classes:
+    Student: représente un étudiant avec ses informations de base.
+"""
+
 
 class Student:
     """
