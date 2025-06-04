@@ -4,8 +4,7 @@ flowchart TD
 
 ```mermaid
 
-classDiagram
-
+classDiagram 
 class User {
   id : UUID4
   first_name : String
