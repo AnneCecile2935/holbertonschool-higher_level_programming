@@ -42,8 +42,8 @@ Interface --> API_Users
 Interface --> API_Places
 Interface --> API_Reviews
 
-Presentation_Layer --> Business_Logic_Layer
-Business_Logic_Layer --> Persistence_Layer
+Presentation_Layer --Use Pattern Facade --> Business_Logic_Layer
+Business_Logic_Layer --call models--> Persistence_Layer
 ```
 
 ---
