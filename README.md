@@ -2,6 +2,8 @@
 
 flowchart TD
 
+
+%% Presentation Layer
 subgraph Presentation_Layer [PRESENTATION LAYER]
     Interface[Client Interface]
     API_Users[API: /users]
@@ -9,6 +11,7 @@ subgraph Presentation_Layer [PRESENTATION LAYER]
     API_Reviews[API: /reviews]
 end
 
+%% Business Logic Layer
 subgraph Business_Logic_Layer [BUSINESS LOGIC LAYER]
     subgraph Facade [Pattern Facade]
         UserService[UserService]
@@ -23,6 +26,7 @@ subgraph Business_Logic_Layer [BUSINESS LOGIC LAYER]
     end
 end
 
+%% Persistence Layer
 subgraph Persistence_Layer [PERSISTENCE LAYER]
     Database[Database Access]
     subgraph Models [Models]
@@ -33,22 +37,13 @@ subgraph Persistence_Layer [PERSISTENCE LAYER]
     end
 end
 
+%% Relations
 Interface --> API_Users
 Interface --> API_Places
 Interface --> API_Reviews
 
-API_Users --> UserService
-API_Places --> PlaceService
-API_Reviews --> ReviewService
-
-UserService --> UserDomain
-PlaceService --> PlaceDomain
-ReviewService --> ReviewDomain
-
-UserDomain --> UserModel
-PlaceDomain --> PlaceModel
-ReviewDomain --> ReviewModel
-AmenityDomain --> AmenityModel
+Presentation_Layer --> Business_Logic_Layer
+Business_Logic_Layer --> Persistence_Layer
 ```
 
 ---
