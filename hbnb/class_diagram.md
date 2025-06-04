@@ -2,17 +2,18 @@
 
 flowchart TD
 
+```mermaid
 classDiagram
 
 class User {
-  id
-  first_name
-  last_name
-  email
-  password
-  is_admin
-  created_at
-  updated_at
+  id : UUID4
+  first_name : String
+  last_name : String
+  email : String
+  password : String
+  is_admin : Boolean
+  created_at : DateTime
+  updated_at : DateTime
 
   register()
   updateProfile()
@@ -21,14 +22,14 @@ class User {
 }
 
 class Place {
-  id
-  title
-  description
-  price
-  latitude
-  longitude
-  created_at
-  updated_at
+  id : UUID4
+  title : String
+  description : String
+  price : Float
+  latitude : Float
+  longitude : Float
+  created_at : DateTime
+  updated_at : DateTime
 
   create()
   update()
@@ -38,13 +39,13 @@ class Place {
 }
 
 class Review {
-  id
-  user_id
-  place_id
-  rating
-  comment
-  created_at
-  updated_at
+  id : UUID4
+  user_id : UUID4
+  place_id : UUID4
+  rating : Int
+  comment : String
+  created_at : DateTime
+  updated_at : DateTime
 
   create()
   update()
@@ -54,11 +55,11 @@ class Review {
 }
 
 class Amenity {
-  id
-  name
-  description
-  created_at
-  updated_at
+  id : UUID4
+  name : String
+  description : String
+  created_at : DateTime
+  updated_at : DateTime
 
   create()
   update()
@@ -66,12 +67,10 @@ class Amenity {
   list()
 }
 
-%% Relations
-User --> Review : writes
-User --> Place : owns
-Place --> Review : receives
-Place o-- Amenity : has
-
+User "1" --> "*" Review : writes
+User "1" --> "*" Place : owns
+Place "1" --> "*" Review : receives
+Place "1" o-- "*" Amenity : has
 ```
 
 ---
