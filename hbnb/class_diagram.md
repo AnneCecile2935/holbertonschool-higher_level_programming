@@ -1,10 +1,6 @@
 ```mermaid
+classDiagram
 
-flowchart TD
-
-```mermaid
-
-classDiagram 
 class User {
   id : int
   first_name : String
