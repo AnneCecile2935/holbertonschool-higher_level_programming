@@ -6,7 +6,7 @@ flowchart TD
 
 classDiagram 
 class User {
-  id : UUID4
+  id : int
   first_name : String
   last_name : String
   email : String
@@ -22,7 +22,7 @@ class User {
 }
 
 class Place {
-  id : UUID4
+  id : int
   title : String
   description : String
   price : Float
