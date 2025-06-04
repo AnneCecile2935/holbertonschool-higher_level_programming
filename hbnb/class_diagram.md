@@ -3,11 +3,6 @@
 flowchart TD
 
 classDiagram
-    %% Relations
-    User "1" -- "*" Review : writes
-    Place "1" -- "*" Review : receives
-    Place "1" o-- "*" Amenity : has
-    User "1" -- "*" Place : owns
 
     %% Classe User
     class User {
@@ -15,7 +10,7 @@ classDiagram
         +String first_name
         +String last_name
         +String email
-        -String password
+        +String password
         +bool is_admin
         +Date created_at
         +Date updated_at
@@ -74,6 +69,13 @@ classDiagram
         +delete()
         +list()
     }
+
+    %% Relations (déclarées après les classes)
+    User "1" -- "*" Review : writes
+    User "1" -- "*" Place : owns
+    Place "1" -- "*" Review : receives
+    Place "1" o-- "*" Amenity : has
+
 ```
 
 ---
