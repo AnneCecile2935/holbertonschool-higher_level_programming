@@ -16,7 +16,8 @@ def append_after(filename="", search_string="", new_string=""):
     Note:
         - The function overwrites the original file with the updated content.
         - It uses the 'with' statement for file operations.
-        - It does not handle exceptions related to file permissions or missing files.
+        - It does not handle exceptions related to file permissions or missing
+        files.
     """
     with open(filename, "r") as f:
         lines = f.readlines()
