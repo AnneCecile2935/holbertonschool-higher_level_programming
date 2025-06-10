@@ -53,7 +53,8 @@ def fetch_and_save_posts():
             for post in posts
         ]
         fieldnames = data[0].keys()
-        with open("posts.csv", 'w', newline='', encoding='utf-8') as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        with open("posts.csv", 'w', newline='', encoding='utf-8') as file:
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(data)
+        print("Data has been successfully written to posts.csv")
