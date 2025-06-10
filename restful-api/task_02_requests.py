@@ -44,6 +44,7 @@ def fetch_and_save_posts():
     avec les colonnes correspondantes.
     """
     response = requests.get("https://jsonplaceholder.typicode.com/posts")
+    print(f"Status Code: {response.status_code}")
 
     if response.status_code == 200:
         posts = response.json()
@@ -52,7 +53,7 @@ def fetch_and_save_posts():
             for post in posts
         ]
 
-    with open("posts.csv", 'w', newline='') as csv_file:
+    with open("posts.csv", 'w', newline='', encoding='utf-8') as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=['id', 'title', 'body'])
         writer.writeheader()
         writer.writerows(data)
