@@ -1,6 +1,4 @@
-import requests
-import csv
-
+#!/usr/bin/python3
 """
 Module pour interagir avec l'API JSONPlaceholder.
 Ce module contient deux fonctions principales :
@@ -8,6 +6,10 @@ Ce module contient deux fonctions principales :
 - fetch_and_save_posts() : récupère les posts et les sauvegarde dans
 un fichier CSV.
 """
+
+
+import requests
+import csv
 
 
 def fetch_and_print_posts():
