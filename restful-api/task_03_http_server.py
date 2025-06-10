@@ -6,14 +6,20 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        if self.path == '/data':
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
+
+        elif self.path == '/data':
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-
             data = {"name": "John", "age": 30, "city": "New York"}
             json_data = json.dumps(data)
             self.wfile.write(json_data.encode("utf-8"))
+            
         elif self.path == '/status':
             self.send_response(200)
             self.send_header('Content-type', 'text/plain')
