@@ -57,7 +57,7 @@ def post_add_user():
 
     username = data['username']
     if username in users:
-        return jsonify({"error": "User already exists"}), 409
+        return jsonify({"error": "User already exists"}), 400
 
     allowed_fields = {'name', 'age', 'city'}
     user_info = {'username': username}
