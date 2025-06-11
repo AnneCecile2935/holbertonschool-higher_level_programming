@@ -60,10 +60,10 @@ def post_add_user():
         return jsonify({"error": "User already exists"}), 409
 
     allowed_fields = {'name', 'age', 'city'}
-    user_info = {'username' :username}
+    user_info = {'username': username}
     for key in allowed_fields:
         if key in data:
-            user_info[key]= data[key]
+            user_info[key] = data[key]
     users[username] = user_info
 
     return jsonify({
