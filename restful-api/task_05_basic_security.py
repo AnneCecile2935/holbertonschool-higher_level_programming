@@ -57,7 +57,7 @@ def login():
             additional_claims={"role": user["role"]}
         )
         return jsonify(access_token=access_token), 200
-    return jsonify({"error": "Invalide credentails"}), 401
+    return jsonify({"error": "Invalide credentials"}), 401
 
 
 @app.route('/jwt-protected', methods=['GET'])
