@@ -52,7 +52,7 @@ def login():
             identity=username,
             additional_claims={"role": user["role"]}
         )
-        return jsonify(access_token=access_token), 200
+        return jsonify(access_token=access_token)
     return jsonify({"error": "Invalid credentials"}), 401
 
 
@@ -71,7 +71,7 @@ def admin_only():
     return jsonify(
         message="Admin Access: Granted",
         admin_user=current_user
-    ), 200
+    )
 
 
 @jwt.unauthorized_loader
