@@ -1,6 +1,6 @@
--- create user if not exists
+-- Créer l'utilisateur s'il n'existe pas déjà
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
--- with all privilege on data bases
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'local_host';
--- apply the changes
-FLUSH PRIVILEGES;
+
+-- Lui accorder tous les privilèges sur le serveur
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION;
+
