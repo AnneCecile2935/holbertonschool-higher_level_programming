@@ -1,11 +1,18 @@
 #!/usr/bin/python3
 """
+<<<<<<< HEAD
 Script qui se connecte à une base de données MySQL et affiche toutes
 les entrées
 de la table `states` triées par ordre croissant selon leur `id`.
 
 Le script prend en arguments la connexion MySQL (nom d'utilisateur,
 mot de passe,
+=======
+Script qui se connecte à une base de données MySQL et affiche toutes les entrées
+de la table `states` triées par ordre croissant selon leur `id`.
+
+Le script prend en arguments la connexion MySQL (nom d'utilisateur, mot de passe,
+>>>>>>> 3402a7d37bfab04d2201887bbe32bf56fd9d07f3
 nom de la base de données) et affiche chaque ligne de la table `states`.
 
 Usage:
