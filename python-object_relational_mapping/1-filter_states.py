@@ -24,11 +24,11 @@ if __name__ == "__main__":
         )
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * "
+        "SELECT DISTINCT name "
         "FROM states "
         "WHERE name "
         "LIKE 'N%' "
-        "ORDER BY id ASC;")
+        "ORDER BY states.name ASC;")
 
     rows = cursor.fetchall()
 
