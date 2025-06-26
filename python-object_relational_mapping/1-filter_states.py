@@ -23,13 +23,13 @@ if __name__ == "__main__":
         db=sys.argv[3]
         )
     cursor = db.cursor()
-    query = (
+    cursor.execute(
         "SELECT * "
         "FROM states "
         "WHERE name "
         "LIKE 'N%' "
         "ORDER BY id ASC;")
-    cursor.execute(query)
+
     rows = cursor.fetchall()
 
     for row in rows:
