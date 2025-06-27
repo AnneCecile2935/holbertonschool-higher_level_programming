@@ -26,9 +26,8 @@ if __name__ == "__main__":
     cursor.execute(
         "SELECT MIN(id), name "
         "FROM states "
-        "WHERE LOWER(name) "
-        "LIKE 'n%' "
-        "GROUP BY name "
+        "WHERE name "
+        "LIKE 'N%' "
         "ORDER BY MIN(id) ASC;")
 
     rows = cursor.fetchall()
