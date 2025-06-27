@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Defines the City class mapped to the 'cities' table using SQLAlchemy ORM.
 Each City has an id, a name, and a foreign key linking to a State.
