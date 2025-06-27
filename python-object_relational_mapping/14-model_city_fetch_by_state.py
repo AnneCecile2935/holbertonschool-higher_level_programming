@@ -31,11 +31,11 @@ if __name__ == "__main__":
     session = Session()
 
     cities = (
-        session.query(State, City)
-        .filter(City.state_id == State.id)
-        .all()
+        session.query(State.name, City.id, City.name)
+        .join(City, City.state_id == State.id)
+        .order_by(City.id).all()
     )
-    for state, city in cities:
-        print(f"{state.name}: ({city.id}) {city.name}")
-    session.commit()
+    for state_name, city_id, city_name in cities:
+        print(f"{state_name}: ({city_id}) {city_name}")
+
     session.close()
