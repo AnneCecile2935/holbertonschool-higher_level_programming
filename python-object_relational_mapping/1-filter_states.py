@@ -33,7 +33,7 @@ if __name__ == "__main__":
     rows = cursor.fetchall()
 
     for row in rows:
-        print(f"{row[0]}: {row[1]}")
+        print(row)
 
     cursor.close()
     db.close()
