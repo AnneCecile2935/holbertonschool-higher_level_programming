@@ -32,11 +32,10 @@ if __name__ == "__main__":
 
     cities = (
         session.query(State, City)
-        .filter(State.id == City.state_id)
-        .order_by(City.id)
+        .filter(City.sate.id == State.id)
         .all()
     )
     for state, city in cities:
         print(f"{state.name}: ({city.id}) {city.name}")
-
+    session.commit()
     session.close()
