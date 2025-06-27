@@ -26,14 +26,14 @@ if __name__ == "__main__":
     cursor.execute(
         "SELECT id, name "
         "FROM states "
-        "WHERE UPPER(name) "
+        "WHERE BINARY name "
         "LIKE 'N%' "
         "ORDER BY id ASC;")
 
     rows = cursor.fetchall()
 
     for row in rows:
-        print(row)
+        print(f"{row[0]}: {row[1]}")
 
     cursor.close()
     db.close()
