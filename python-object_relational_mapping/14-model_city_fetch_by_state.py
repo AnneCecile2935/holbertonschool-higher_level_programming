@@ -30,12 +30,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    cities = (
+    result = (
         session.query(State.name, City.id, City.name)
         .join(City, City.state_id == State.id)
         .order_by(City.id).all()
     )
-    for state_name, city_id, city_name in cities:
+    for state_name, city_id, city_name in result:
         print(f"{state_name}: ({city_id}) {city_name}")
 
     session.close()
