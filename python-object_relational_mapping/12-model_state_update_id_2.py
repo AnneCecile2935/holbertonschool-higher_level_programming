@@ -34,10 +34,6 @@ if __name__ == "__main__":
 
     state_to_update = session.query(State).filter(State.id == 2).first()
     if state_to_update:
-        state_to_update.name = "New Mexico"
-        session.commit()
-        print("state updated")
-    else:
-        print("State with id=2 not found")
-
+        state_to_update[0].name = "New Mexico"
+    session.commit()
     session.close()
