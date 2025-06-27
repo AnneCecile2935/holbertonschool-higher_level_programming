@@ -33,7 +33,7 @@ if __name__ == "__main__":
     cities = (
         session.query(State, City)
         .filter(State.id == City.state_id)
-        .order_by(asc.(City.id))
+        .order_by(City.id)
         .all()
     )
     for state, city in cities:
