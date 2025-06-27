@@ -26,7 +26,7 @@ if __name__ == "__main__":
     cursor.execute(
         "SELECT id, name "
         "FROM states "
-        "WHERE UPPER(name) "
+        "WHERE name "
         "LIKE 'N%' "
         "ORDER BY id ASC;")
 
