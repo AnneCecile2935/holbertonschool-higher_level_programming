@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     cities = (
         session.query(State, City)
-        .filter(City.sate.id == State.id)
+        .filter(City.state_id == State.id)
         .all()
     )
     for state, city in cities:
