@@ -24,11 +24,11 @@ if __name__ == "__main__":
         )
     cursor = db.cursor()
     cursor.execute(
-        "SELECT MIN(id), name "
+        "SELECT id, name "
         "FROM states "
-        "WHERE name "
+        "WHERE UPPER(name) "
         "LIKE 'N%' "
-        "ORDER BY MIN(id) ASC;")
+        "ORDER BY id ASC;")
 
     rows = cursor.fetchall()
 
