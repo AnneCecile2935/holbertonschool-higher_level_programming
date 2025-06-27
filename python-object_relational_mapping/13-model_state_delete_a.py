@@ -37,7 +37,7 @@ if __name__ == "__main__":
     state_del_a = session.query(State).filter(State.name.like('%a%')).all()
     for state in state_del_a:
         session.delete(state)
-        session.commit()
+    session.commit()
 
     remaining_states = session.query(State).order_by(State.id).all()
     for state in remaining_states:
