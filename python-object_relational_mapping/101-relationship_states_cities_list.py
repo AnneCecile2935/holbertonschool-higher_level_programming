@@ -27,7 +27,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from relationship_city import City
 from relationship_state import State, Base
-from sqlalchemy.orm import joinedload
+from sqlalchemy.orm import selectinload
 
 if __name__ == "__main__":
     # connect to MySQl server using SQLAlchemy
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     # Query all States and preload their related cities in one query
     states = (
         session.query(State)
-        .options(joinedload(State.cities))
+        .options(selectinload(State.cities))
         .order_by(State.id)
         .all()
         )
