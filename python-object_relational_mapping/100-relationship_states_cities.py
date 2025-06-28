@@ -14,18 +14,19 @@ This script:
 - Persists the new objects into the database.
 """
 import sys
-from sqlalchemy.orm import create_engine
+from sqlalchemy import create_engine
+from sqlalchemy.orm import relationship
 from sqlalchemy.orm import sessionmaker
 from relationship_city import Base, City
-from relationship_city import State
+from relationship_state import State
 
 
 if __name__ == "__main__":
     # connect to MySQl server using SQLAlchemy
     engine = create_engine(
-        "myslq+mysqldb://"
+        "mysql+mysqldb://"
         f"{sys.argv[1]}:{sys.argv[2]}"
-        "@localhost:3306"
+        "@localhost:3306/"
         f"{sys.argv[3]}",
         pool_pre_ping=True
     )
