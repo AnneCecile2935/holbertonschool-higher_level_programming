@@ -27,7 +27,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from relationship_city import City
 from relationship_state import State, Base
-from sqlalchemy.orm import relationship, joinedload
+from sqlalchemy.orm import joinedload
 
 if __name__ == "__main__":
     # connect to MySQl server using SQLAlchemy
@@ -58,6 +58,6 @@ if __name__ == "__main__":
         print(f"{state.id}: {state.name}")
         # Sort cities by city.id ascending
         for city in sorted(state.cities, key=lambda c: c.id):
-            print(f"    {city.id}: {city.name}")
+            print(f"\t{city.id}: {city.name}")
 
     session.close()
