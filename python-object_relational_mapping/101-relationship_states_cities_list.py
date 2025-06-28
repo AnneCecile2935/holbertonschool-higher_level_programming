@@ -26,7 +26,7 @@ import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from relationship_city import City
-from relationship_state import State, Base
+from relationship_state import State
 from sqlalchemy.orm import selectinload
 
 if __name__ == "__main__":
