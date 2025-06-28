@@ -38,7 +38,6 @@ if __name__ == "__main__":
         f"{sys.argv[3]}",
         pool_pre_ping=True
     )
-    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -56,9 +55,9 @@ if __name__ == "__main__":
     # Iterate over states and their cities,
     # displaying them in the required format
     for state in states:
-        print(f"{state.id}: {state.name}")
+        print("{}: {}".format(state.id, state.name))
         # Sort cities by city.id ascending
         for city in sorted(state.cities, key=lambda c: c.id):
-            print(f"\t{city.id}: {city.name}")
+            print("\t{}: {}".format(city.id, city.name))
 
     session.close()
