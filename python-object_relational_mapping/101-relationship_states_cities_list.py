@@ -45,7 +45,7 @@ if __name__ == "__main__":
     states = (
         session.query(State)
         .options(joinedload(State.cities))
-        .order_by(State.id, City.id)
+        .order_by(State.id)
         .all()
         )
     # options(joined(state.cities = charge tous les objets State
