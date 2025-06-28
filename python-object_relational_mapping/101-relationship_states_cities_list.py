@@ -55,9 +55,8 @@ if __name__ == "__main__":
     # Iterate over states and their cities,
     # displaying them in the required format
     for state in states:
-        print("{}: {}".format(state.id, state.name))
-        # Sort cities by city.id ascending
-        for city in sorted(state.cities, key=lambda c: c.id):
-            print("\t{}: {}".format(city.id, city.name))
+        print(f"{state.id}: {state.name}")
+        for city in state.cities:
+            print(f"\t{city.id}: {city.name}")
 
     session.close()
