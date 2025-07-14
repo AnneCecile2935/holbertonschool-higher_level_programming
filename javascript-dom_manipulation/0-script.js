@@ -1,3 +1,2 @@
 #!/usr/bin/node
-document.querySelector("0-main.html").style.color = '#FF0000';
-
+document.querySelector('header').style.color = '#FF0000';
