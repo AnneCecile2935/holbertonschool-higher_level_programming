@@ -30,7 +30,6 @@ By the end of this project, you will be able to explain:
 - JavaScript code follows **semistandard** style.
 - No use of `var`; only `let` and `const`.
 - HTML should not reload for any DOM change or API call.
-- A `README.md` file is included at the root of the project.
 
 ---
 
