@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import json
 import csv
+import os
 
 app = Flask(__name__)
 
@@ -60,6 +61,7 @@ def read_product_csv(filename="products.csv"):
 def product():
     source = request.args.get("source")
     product_id = request.args.get("id")
+    file_path=''
 
     if source == "json":
         products = read_product_json()
@@ -68,6 +70,8 @@ def product():
     else:
         return render_template("product_display.html", error="Wrong source")
 
+    if not os.path.exists(file_path):
+        return render_template('product_display.html', error="Fiile not found")
     if product_id:
         try:
             product_id = int(product_id)
