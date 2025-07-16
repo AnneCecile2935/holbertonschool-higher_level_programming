@@ -71,7 +71,7 @@ def product():
     if product_id:
         try:
             product_id = int(product_id)
-            filtered = [p for p in products if p["id"] == product_id]
+            filtered = [p for p in products if str(p["id"]) == product_id]
             if not filtered:
                 return render_template(
                     "product_display.html",
