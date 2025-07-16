@@ -32,7 +32,7 @@ def read_product_json(filename="products.json"):
     try:
         with open(filename) as f:
             data = json.load(f)
-            return data.get("products", [])
+            return data
     except Exception as e:
         print(f"Error JSON: {e}")
         return []
@@ -59,29 +59,38 @@ def read_product_csv(filename="products.csv"):
 @app.route('/products')
 def product():
     source = request.args.get("source")
-    product_id = request.args.get("id")
+    id_str = request.args.get("id")
 
     if source == "json":
-        products = read_product_json()
+        data = read_product_json()
     elif source == "csv":
-        products = read_product_csv()
+        data = read_product_csv()
     else:
         return render_template("product_display.html", error="Wrong source")
 
-    if product_id:
+    if id_str:
         try:
-            product_id = int(product_id)
-            filtered = [p for p in products if p["id"] == product_id]
-            if not filtered:
-                return render_template(
-                    "product_display.html",
-                    error="Product not found"
-                )
-            products = filtered
+            product_id = int(id_str)
         except ValueError:
-            return render_template("product_display.html", error="Invalid ID")
-    return render_template("product_display.html", products=products)
+            return render_template(
+                'product_display.html',
+                error="Invalid id format",
+                products=None
+            )
+        filtered = [p for p in data if p['id'] == product_id]
+        if not filtered:
+            return render_template(
+                'product_display.html',
+                error="Product not found",
+                products=None
+            )
+        return render_template(
+            'product_display.html',
+            products=filtered,
+            error=None
+            )
 
+    return render_template('product_display.html', products=data, error=None)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
