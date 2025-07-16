@@ -64,24 +64,31 @@ def product():
     file_path=''
 
     if source == "json":
-        products = read_product_json()
+        file_path = 'products.json'
+
     elif source == "csv":
-        products = read_product_csv()
+        file_path = 'pructs.csv'
     else:
         return render_template("product_display.html", error="Wrong source")
 
     if not os.path.exists(file_path):
-        return render_template('product_display.html', error="Fiile not found")
+        return render_template('product_display.html', error="File not found")
+
+    if source == 'json':
+        products = read_product_json(file_path)
+
+    if source == 'csv':
+        products = read_product_csv(file_path)
+
     if product_id:
         try:
             product_id = int(product_id)
-            filtered = [p for p in products if str(p["id"]) == product_id]
-            if not filtered:
+            products = [p for p in products if p["id"] == product_id]
+            if not products:
                 return render_template(
                     "product_display.html",
                     error="Product not found"
                 )
-            products = filtered
         except ValueError:
             return render_template("product_display.html", error="Invalid ID")
     return render_template("product_display.html", products=products)
