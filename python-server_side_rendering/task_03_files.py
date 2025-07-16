@@ -5,6 +5,29 @@ import csv
 app = Flask(__name__)
 
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/items')
+def items():
+    with open("items.json") as f:
+        data = json.load(f)
+    items_list = data.get("items", [])
+    return render_template('items.html', items=items_list)
+
+
 def read_product_json(filename="products.json"):
     try:
         with open(filename) as f:
@@ -31,29 +54,6 @@ def read_product_csv(filename="products.csv"):
     except Exception as e:
         print(f"Error CSV : {e}")
     return products
-
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
-
-@app.route('/items')
-def items():
-    with open("items.json") as f:
-        data = json.load(f)
-    items_list = data.get("items", [])
-    return render_template('items.html', items=items_list)
 
 
 @app.route('/products')

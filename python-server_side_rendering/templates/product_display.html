@@ -1,11 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<title>Product Display</title>
 	</head>
 <body>
 	{% include 'header.html'%}
-
-	<h1>Product List</h1>
+	<h1>Product Display</h1>
+	<main>
+		<h1>Product List</h1>
 	{% if error %}
 		<p>{{ error }}</p>
 	{% elif products %}
@@ -30,6 +32,8 @@
 	{% else %}
 	<p>No products availables</p>
 	{% endif %}
+
+	</main>
 	{% include 'footer.html'%}
 </body>
 </html>
